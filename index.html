@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Is a Startup Career Better Than a Stable Corporate Job for Young Graduates?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400..800&display=swap">
+<style>
+
+:root{ --display:'Archivo Black',Impact,sans-serif; --body:'Inter',system-ui,sans-serif; --mono:'Inter',system-ui,sans-serif; box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); --page:#fff3e0;--hw:400;--r:10px;--rb:10px;--dialr:12px;--shadow:8px 8px 0 var(--shc,#111);--bw:4px;--bw2:4px;--h1:clamp(32px,5.2vw,78px);--h2:clamp(28px,3.8vw,56px);--rail-bg:#111;--rail-fg:#fff3e0;--rail-bd:0;--rail-ff:'Archivo Black',sans-serif;--rail-cur:#ff5a1f;--rail-on:#111;--trk-h:22px;--trk-bg:repeating-linear-gradient(45deg,#111 0 8px,transparent 8px 16px);--trk-r:0;--trk-bd:4px solid #111;--th:58px;--th-mt:-24px;--th-r:8px;--pt:clamp(96px,14vh,150px);--pl:clamp(20px,6vw,100px); }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --page:#111111; } }
+:root[data-theme="dark"]{ --page:#111111; }
+*,*::before,*::after{ box-sizing:inherit; }
+html{ scroll-behavior:smooth; scroll-snap-type:y proximity; scroll-padding-top:env(safe-area-inset-top,0px); }
+body{ margin:0; background:var(--page); font-family:var(--body); font-size:clamp(17px,1.35vw,21px); line-height:1.5; -webkit-font-smoothing:antialiased; }
+button{ font:inherit; color:inherit; cursor:pointer; }
+:focus-visible{ outline:3px solid var(--acc); outline-offset:3px; }
+h1,h2,h3,p{ margin:0; }
+h1,h2{ font-family:var(--display); font-weight:var(--hw); line-height:1.08; }
+h1{ font-size:var(--h1); max-width:15em; }
+h2{ font-size:var(--h2); max-width:17em; }
+h3{ font-family:var(--body); font-weight:700; font-size:clamp(20px,2vw,28px); line-height:1.25; }
+.scene{ min-height:100vh; min-height:100svh; position:relative; scroll-snap-align:start; overflow:hidden;
+  padding:var(--pt,clamp(72px,11vh,130px)) var(--pr,clamp(20px,6vw,100px)) var(--pb,clamp(72px,11vh,130px)) var(--pl,clamp(68px,9vw,150px));
+  display:flex; flex-direction:column; justify-content:center; gap:clamp(24px,4vh,44px);
+  background:var(--s-bg); color:var(--s-fg); }
+.wrap{ max-width:1180px; width:100%; display:flex; flex-direction:column; gap:clamp(22px,3.6vh,40px); position:relative; z-index:2; }
+.soft{ color:var(--s-soft); } .mute{ color:var(--s-mute); }
+.kicker{ display:flex; align-items:center; gap:12px; font-family:var(--mono); font-size:15px; color:var(--s-mute); }
+.kicker i{ width:12px; height:12px; border-radius:50%; background:var(--acc); flex:none; }
+.lead{ font-size:clamp(18px,1.7vw,26px); max-width:34em; color:var(--s-soft); }
+/* rail */
+.rail{ position:fixed; z-index:60; display:flex; }
+.rail button{ position:relative; border:0; background:transparent; padding:0; }
+.rail button em{ font-style:normal; }
+.rail.dots{ left:clamp(10px,2.4vw,34px); top:50%; transform:translateY(-50%); height:min(60vh,520px); flex-direction:column; justify-content:space-between; align-items:center; --rc:#fff; --rl:rgba(255,255,255,.3); }
+.rail.dots.on-light{ --rc:#111; --rl:rgba(0,0,0,.3); }
+.rail.dots.right{ left:auto; right:clamp(10px,2vw,28px); }
+.rail.dots::before{ content:""; position:absolute; top:6px; bottom:6px; left:50%; width:4px; transform:translateX(-50%); background-image:radial-gradient(circle,var(--rl) 1.6px,transparent 2px); background-size:4px 12px; background-repeat:repeat-y; }
+.rail.dots button{ width:28px; height:28px; display:grid; place-items:center; }
+.rail.dots button span{ width:11px; height:11px; border-radius:50%; border:2px solid var(--rc); transition:all .25s; }
+.rail.dots button[aria-current="true"] span{ width:20px; height:20px; background:var(--acc); border-color:var(--acc); box-shadow:0 0 0 5px color-mix(in srgb,var(--acc) 26%,transparent); }
+.rail.dots button em{ position:absolute; left:38px; font-family:var(--mono); font-size:13px; white-space:nowrap; padding:4px 10px; border-radius:99px; background:var(--rc); color:var(--page-inv,#111); opacity:0; pointer-events:none; transition:opacity .2s; }
+.rail.dots.on-light button em{ color:#fff; }
+.rail.dots.right button em{ left:auto; right:38px; }
+.rail.dots button:hover em,.rail.dots button:focus-visible em{ opacity:1; }
+.rail.pill{ left:50%; bottom:calc(14px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); gap:4px; padding:6px 10px; border-radius:99px; background:var(--rail-bg); box-shadow:0 6px 24px rgba(0,0,0,.25); align-items:center; }
+.rail.pill button{ width:26px; height:26px; display:grid; place-items:center; }
+.rail.pill button span{ width:10px; height:10px; border-radius:50%; background:var(--rail-fg); opacity:.45; transition:all .25s; }
+.rail.pill button[aria-current="true"] span{ width:22px; border-radius:99px; background:var(--acc); opacity:1; }
+.rail.pill button em{ display:none; }
+.rail.tabs{ left:0; right:0; top:env(safe-area-inset-top,0px); height:54px; background:var(--rail-bg); border-bottom:var(--rail-bd); align-items:stretch; gap:0; padding:0 clamp(8px,2vw,24px); overflow-x:auto; scrollbar-width:none; }
+.rail.tabs button{ padding:0 clamp(10px,1.4vw,20px); color:var(--rail-fg); font-family:var(--rail-ff,var(--body)); font-weight:700; font-size:16px; white-space:nowrap; border-bottom:4px solid transparent; }
+.rail.tabs button span{ display:none; }
+.rail.tabs button[aria-current="true"]{ border-bottom-color:var(--acc); color:var(--rail-on,var(--rail-fg)); background:var(--rail-cur,transparent); }
+/* hero */
+.go{ align-self:flex-start; display:flex; align-items:center; gap:16px; background:transparent; border:var(--bw) solid var(--s-fg); border-radius:var(--rb); padding:10px 24px 10px 10px; color:var(--s-fg); transition:background .2s,color .2s; font-weight:700; box-shadow:var(--shadow); }
+.go b{ width:44px; height:44px; border-radius:var(--dialr); background:var(--acc); color:var(--onacc); display:grid; place-items:center; }
+.go:hover{ background:var(--s-fg); color:var(--s-bg); }
+.go svg{ width:20px; height:20px; }
+.hook{ font-size:clamp(20px,2.1vw,32px); line-height:1.35; max-width:26em; min-height:3.9em; color:var(--s-soft); }
+.hook .caret{ display:inline-block; width:.5em; height:1em; background:var(--acc); vertical-align:-0.12em; margin-left:4px; animation:blink 1s steps(1) infinite; }
+@keyframes blink{ 50%{ opacity:0; } }
+#fx{ position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0; }
+/* terms */
+.dials{ display:flex; flex-wrap:wrap; gap:clamp(14px,2.4vw,32px); }
+.dial{ width:clamp(120px,15vw,190px); aspect-ratio:1; border-radius:var(--dialr); background:var(--s-sur); border:var(--bw) solid var(--s-fg); color:var(--s-fg); box-shadow:var(--shadow);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:12px; text-align:center; transition:background .25s,color .25s,transform .25s; }
+.dial svg{ width:38px; height:38px; fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+.dial span{ font-weight:700; font-size:clamp(14px,1.3vw,19px); line-height:1.15; }
+.dial:hover{ transform:translateY(-3px); }
+.dial[aria-pressed="true"]{ background:var(--s-fg); color:var(--s-bg); }
+.panel{ background:var(--s-sur); border:var(--bw) solid var(--s-line); border-left:8px solid var(--acc); border-radius:var(--r); padding:clamp(20px,3vw,40px); max-width:780px; min-height:190px; display:flex; flex-direction:column; gap:14px; box-shadow:var(--shadow); }
+.panel .def{ font-size:clamp(20px,2vw,28px); line-height:1.35; }
+.panel .ask{ font-family:var(--mono); font-size:15px; color:var(--s-mute); }
+.panel .ask b{ color:var(--acc); }
+.swap{ animation:swap .35s ease; }
+@keyframes swap{ from{ opacity:0; transform:translateX(18px); } to{ opacity:1; transform:none; } }
+/* views */
+.seg{ display:inline-flex; border:var(--bw) solid var(--s-fg); border-radius:var(--rb); padding:4px; gap:4px; align-self:flex-start; box-shadow:var(--shadow); }
+.seg button{ border:0; background:transparent; border-radius:var(--rb); padding:10px 26px; font-weight:700; color:var(--s-fg); transition:background .25s,color .25s; }
+.seg button[aria-selected="true"]{ background:var(--s-fg); color:var(--s-bg); }
+.args{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; max-width:920px; }
+.args li{ display:flex; align-items:flex-start; gap:clamp(14px,2vw,26px); padding:clamp(14px,2.2vh,22px) 0; border-top:1px solid var(--s-line); }
+.args li:last-child{ border-bottom:1px solid var(--s-line); }
+.pick{ flex:none; width:40px; height:40px; border-radius:var(--dialr); border:2px solid var(--s-mute); background:transparent; display:grid; place-items:center; margin-top:2px; color:var(--onacc); transition:all .2s; }
+.pick svg{ width:18px; height:18px; opacity:0; transition:opacity .2s; fill:none; stroke:currentColor; stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; }
+.pick[aria-pressed="true"]{ background:var(--acc); border-color:var(--acc); }
+.pick[aria-pressed="true"] svg{ opacity:1; }
+.args .t{ flex:1; display:flex; flex-direction:column; gap:4px; } .args .t p{ color:var(--s-soft); }
+.real{ max-width:920px; border-left:8px solid var(--acc); padding:4px 0 4px 22px; display:flex; flex-direction:column; gap:6px; }
+.real b{ font-family:var(--mono); font-size:14px; color:var(--acc); }
+.tally{ font-family:var(--mono); font-size:15px; color:var(--s-mute); } .tally strong{ color:var(--acc); }
+/* spectrum */
+.ends{ display:flex; justify-content:space-between; max-width:980px; font-weight:700; font-size:clamp(18px,1.9vw,26px); }
+.slider{ max-width:980px; width:100%; padding:14px 0; }
+input[type=range]{ -webkit-appearance:none; appearance:none; width:100%; height:60px; background:transparent; margin:0; cursor:grab; }
+input[type=range]::-webkit-slider-runnable-track{ height:var(--trk-h); background:var(--trk-bg); border-radius:var(--trk-r); border:var(--trk-bd); }
+input[type=range]::-moz-range-track{ height:var(--trk-h); background:var(--trk-bg); border-radius:var(--trk-r); border:var(--trk-bd); }
+input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:var(--th); height:var(--th); margin-top:var(--th-mt); border-radius:var(--th-r); background:var(--acc); border:5px solid var(--s-bg); box-shadow:0 0 0 3px var(--s-fg); }
+input[type=range]::-moz-range-thumb{ width:calc(var(--th) - 10px); height:calc(var(--th) - 10px); border-radius:var(--th-r); background:var(--acc); border:5px solid var(--s-bg); box-shadow:0 0 0 3px var(--s-fg); }
+.zone{ font-family:var(--display); font-weight:var(--hw); font-size:clamp(30px,4.4vw,60px); line-height:1.1; min-height:1.1em; }
+.zonep{ font-size:clamp(18px,1.7vw,24px); max-width:32em; min-height:3.2em; color:var(--s-soft); }
+.nuance{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:clamp(18px,3vw,40px); max-width:1100px; }
+.nuance div{ border-top:var(--bw) solid var(--s-fg); padding-top:14px; display:flex; flex-direction:column; gap:6px; }
+.nuance p{ color:var(--s-soft); font-size:.95em; }
+/* talk */
+.qbar{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.qn{ width:54px; height:54px; border-radius:var(--dialr); border:var(--bw) solid var(--s-fg); background:transparent; color:var(--s-fg); font-family:var(--display); font-weight:var(--hw); font-size:26px; transition:all .2s; }
+.qn[aria-pressed="true"]{ background:var(--acc); border-color:var(--acc); color:var(--onacc); }
+.qbig{ font-family:var(--display); font-weight:var(--hw); font-size:clamp(28px,4vw,58px); line-height:1.15; max-width:19em; min-height:4.6em; }
+.ctrl{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+.btn{ border:var(--bw) solid var(--s-fg); background:transparent; color:var(--s-fg); border-radius:var(--rb); padding:10px 24px; font-weight:700; transition:background .2s,color .2s; box-shadow:var(--shadow); }
+.btn:hover{ background:var(--s-fg); color:var(--s-bg); }
+.btn.solid{ background:var(--acc); border-color:var(--acc); color:var(--onacc); }
+.btn.solid:hover{ background:var(--s-fg); border-color:var(--s-fg); color:var(--s-bg); }
+.timer{ font-family:var(--display); font-weight:var(--hw); font-size:clamp(40px,5vw,72px); line-height:1; min-width:3.4em; }
+.timer.done{ color:var(--acc); animation:blink 1s steps(1) 4; }
+/* vote */
+.votes{ display:flex; flex-wrap:wrap; gap:clamp(16px,3vw,40px); }
+.vote{ width:clamp(150px,22vw,280px); aspect-ratio:var(--votear,1); border-radius:var(--dialr); border:var(--bw) solid var(--s-fg); background:var(--s-sur); color:var(--s-fg); box-shadow:var(--shadow);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:16px; text-align:center; transition:transform .15s,background .2s,color .2s; }
+.vote:active{ transform:scale(.95); } .vote:hover{ background:var(--s-fg); color:var(--s-bg); }
+.vote span{ font-weight:700; font-size:clamp(16px,1.7vw,24px); line-height:1.15; }
+.vote output{ font-family:var(--display); font-weight:var(--hw); font-size:clamp(40px,5vw,76px); line-height:1; color:var(--acc); }
+.vote:hover output{ color:var(--acc); }
+.vote.bump output{ animation:bump .3s ease; } @keyframes bump{ 50%{ transform:scale(1.35); } }
+.bars{ display:flex; flex-direction:column; gap:12px; max-width:860px; }
+.bar{ display:flex; align-items:center; gap:16px; } .bar label{ width:clamp(90px,14vw,170px); font-weight:700; }
+.bar .track{ flex:1; height:24px; border-radius:var(--rb); background:var(--s-line); overflow:hidden; border:var(--bw2,0) solid var(--s-fg); }
+.bar .fill{ height:100%; width:0%; background:var(--acc); transition:width .5s cubic-bezier(.2,.8,.2,1); }
+.bar small{ width:3.2em; font-family:var(--mono); font-size:15px; color:var(--s-mute); text-align:right; }
+/* close */
+.two{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(24px,4vw,64px); max-width:1100px; }
+.two div{ display:flex; flex-direction:column; gap:10px; border-top:var(--bw) solid var(--s-fg); padding-top:16px; }
+.two h2{ font-size:clamp(24px,3vw,42px); }
+@media (max-width:640px){ .rail.dots button em{ display:none; } .rail.dots{ height:min(54vh,420px); } .rail.dots.right{ display:none; } }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } .swap,.vote.bump output,.hook .caret,.timer.done{ animation:none; } .fill,.dial,.vote{ transition:none; } }
+
+.bo{--s-bg:#fff3e0;--s-fg:#111111;--s-soft:#222222;--s-mute:#444444;--s-line:#111111;--s-sur:#ffffff;--acc:#ff5a1f;--onacc:#111111;--shc:#111;}
+.bor{--s-bg:#ff5a1f;--s-fg:#111111;--s-soft:#1a1a1a;--s-mute:#2b2b2b;--s-line:#111111;--s-sur:#ffffff;--acc:#111111;--onacc:#ffffff;--shc:#111;}
+.bb{--s-bg:#2447e0;--s-fg:#ffffff;--s-soft:#e6ebff;--s-mute:#cfd8ff;--s-line:#ffffff;--s-sur:#1b36b8;--acc:#ffd400;--onacc:#111111;--shc:#111;}
+.ye{--s-bg:#ffd400;--s-fg:#111111;--s-soft:#1a1a1a;--s-mute:#2b2b2b;--s-line:#111111;--s-sur:#ffffff;--acc:#111111;--onacc:#ffd400;--shc:#111;}
+.bk{--s-bg:#111111;--s-fg:#fff3e0;--s-soft:#e0dacb;--s-mute:#b0a99a;--s-line:#444444;--s-sur:#1c1c1c;--acc:#ffd400;--onacc:#111111;--shc:#ff5a1f;}
+
+.mq{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;justify-content:center;gap:18px;overflow:hidden;opacity:.9}
+.mrow{display:flex;width:max-content;font-family:var(--display);font-size:clamp(90px,15vw,240px);line-height:1;white-space:nowrap;-webkit-text-stroke:3px #111;color:transparent}
+.mrow div{padding-right:.4em}
+.r1{animation:mqa 34s linear infinite}.r2{animation:mqb 40s linear infinite;-webkit-text-stroke-color:#ff5a1f}
+@keyframes mqa{to{transform:translateX(-50%)}}@keyframes mqb{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.vs{position:absolute;right:clamp(24px,8vw,140px);top:clamp(110px,18vh,190px);width:clamp(96px,11vw,170px);aspect-ratio:1;border-radius:50%;background:#ffd400;border:4px solid #111;box-shadow:8px 8px 0 #111;display:grid;place-items:center;font-family:var(--display);font-size:clamp(34px,4vw,64px);z-index:1;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-wrapfix{}
+#s-start .wrap{background:#fff3e0;border:4px solid #111;box-shadow:10px 10px 0 #111;padding:clamp(20px,3vw,44px);border-radius:10px;max-width:980px}
+.dial{background:#fff;color:#111}.dial[aria-pressed="true"]{background:#111;color:#fff3e0}
+.bb .dial,.bk .dial{background:var(--s-sur);color:var(--s-fg)}
+.args{gap:18px}.args li{background:#fff;color:#111;border:4px solid #111!important;border-radius:10px;padding:20px 24px;box-shadow:8px 8px 0 #111}
+.args li .t p{color:#222}.pick{border-color:#111;border-radius:8px}
+.real{background:#ffd400;color:#111;border:4px solid #111;border-radius:10px;padding:18px 24px;box-shadow:8px 8px 0 #111}.real b{color:#111}.real .soft{color:#111}
+.panel{background:#fff;color:#111}.panel .ask{color:#444}
+.vote{background:#fff;color:#111}.vote:hover{background:#ffd400;color:#111}.vote output{color:#ff5a1f}
+.bk .vote,.bk .dial{background:#1c1c1c;color:#fff3e0}
+.seg button[aria-selected="true"]{background:#111;color:#fff}
+.bb .seg button[aria-selected="true"]{background:#ffd400;color:#111}
+.bar .track{background:#fff}
+.tally,.kicker{color:inherit}
+.ye .tally strong{color:#111}
+</style>
+</head>
+<body>
+<nav class="rail tabs" id="rail" aria-label="Sections"></nav>
+
+<section class="scene bo" id="s-start" data-label="Start" data-lum="light">
+  <div class="mq" aria-hidden="true"><div class="mrow r1"><div>STARTUP vs CORPORATE vs STARTUP vs CORPORATE vs STARTUP vs CORPORATE vs</div><div>STARTUP vs CORPORATE vs STARTUP vs CORPORATE vs STARTUP vs CORPORATE vs</div></div><div class="mrow r2"><div>CORPORATE vs STARTUP vs CORPORATE vs STARTUP vs CORPORATE vs STARTUP vs</div><div>CORPORATE vs STARTUP vs CORPORATE vs STARTUP vs CORPORATE vs STARTUP vs</div></div></div><div class="vs" aria-hidden="true">VS</div>
+  <div class="wrap">
+    <div class="kicker"><i></i>Group discussion, topic 4</div>
+    <h1>Is a Startup Career Better Than a Stable Corporate Job for Young Graduates?</h1>
+    <p class="hook" id="hook" aria-live="polite"></p>
+    <button class="go" id="go" type="button"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg></b>Start the discussion</button>
+  </div>
+</section>
+
+<section class="scene bor" id="s-terms" data-label="Terms" data-lum="light">
+  <div class="wrap">
+    <h2>Agree on three terms before you argue</h2>
+    <p class="lead">Tap a term to see what it means here.</p>
+    <div class="dials" id="dials" role="group" aria-label="Terms"></div>
+    <div class="panel" id="termPanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="scene bb" id="s-views" data-label="Two views" data-lum="dark">
+  <div class="wrap">
+    <h2>Startup or corporate: which is the better start?</h2>
+    <div class="seg" role="tablist" aria-label="Choose a side">
+      <button role="tab" id="tab-a" aria-selected="true" aria-controls="argPanel" type="button">Startup</button>
+      <button role="tab" id="tab-b" aria-selected="false" aria-controls="argPanel" type="button">Corporate</button>
+    </div>
+    <div id="argPanel" role="tabpanel" style="display:flex;flex-direction:column;gap:22px"></div>
+    <p class="tally" id="tally"></p>
+  </div>
+</section>
+
+<section class="scene ye" id="s-stand" data-label="Where you stand" data-lum="light">
+  <div class="wrap">
+    <h2>Where do you stand?</h2>
+    <div class="ends"><span>Startup</span><span>Corporate</span></div>
+    <div class="slider"><input id="range" type="range" min="0" max="100" value="50" aria-label="Your position between Startup and Corporate"></div>
+    <div class="zone" id="zone"></div>
+    <p class="zonep" id="zonep"></p>
+    <div class="nuance" id="nuance"></div>
+  </div>
+</section>
+
+<section class="scene bk" id="s-talk" data-label="Discuss" data-lum="dark">
+  <div class="wrap">
+    <h2>Your turn to talk</h2>
+    <div class="qbar" id="qbar" role="group" aria-label="Choose a question"></div>
+    <p class="qbig swap" id="qbig" aria-live="polite"></p>
+    <div class="ctrl">
+      <button class="btn" id="qnext" type="button">Next question</button>
+      <button class="btn" id="qrand" type="button">Surprise me</button>
+      <span class="timer" id="timer" aria-label="Timer">2:00</span>
+      <button class="btn solid" id="tgo" type="button">Start timer</button>
+      <button class="btn" id="treset" type="button">Reset</button>
+    </div>
+  </div>
+</section>
+
+<section class="scene bo" id="s-vote" data-label="Show of hands" data-lum="light">
+  <div class="wrap">
+    <h2>For a first job, would you pick a startup or a corporate role?</h2>
+    <p class="lead">Tap once for every raised hand.</p>
+    <div class="votes" id="votes"></div>
+    <div class="bars" id="bars"></div>
+    <div class="ctrl">
+      <button class="btn" id="undo" type="button">Undo last hand</button>
+      <button class="btn" id="clear" type="button">Clear votes</button>
+      <span class="tally" id="vtotal"></span>
+    </div>
+  </div>
+</section>
+
+<section class="scene bor" id="s-end" data-label="Close" data-lum="light">
+  <div class="wrap">
+    <h2>Take a stand</h2>
+    <div class="two">
+      <div><h2>Best opposing point</h2><p class="lead">Name the strongest argument from the other side and say what it made you reconsider.</p></div>
+      <div><h2>One takeaway</h2><p class="lead">Finish in one sentence: what is your position now, and what would change it?</p></div>
+    </div>
+    <button class="btn" id="top" type="button" style="align-self:flex-start">Back to the start</button>
+  </div>
+</section>
+<script>
+
+(function(){
+  var D = {"hook": "Offer A: a salary you can plan your life around. Offer B: a small team, a big mission and no guarantees. Which do you sign?", "typed": true, "hero": "marquee", "fx": [], "terms": [{"n": "Risk appetite", "d": "How much uncertainty in income and job security you are comfortable with.", "a": "How long could you live without a salary?", "g": "<path d=\"M20 5L4 34h32zM20 15v9M20 29v1\"/>"}, {"n": "Learning curve", "d": "How quickly you gain skills, responsibility and exposure early in a career.", "a": "Where would you learn fastest?", "g": "<path d=\"M6 34V6M6 34h30M12 28l7-9 6 5 9-14\"/>"}, {"n": "Career capital", "d": "The skills, network and reputation that make you more valuable over time.", "a": "What would you want to leave a job with?", "g": "<path d=\"M20 4l14 5v10c0 9-6 14-14 17C12 33 6 28 6 19V9zM14 20l5 5 8-9\"/>"}], "views": {"a": {"title": "The case for a startup", "args": [["Faster learning", "Small teams give graduates broad responsibility and direct exposure to decisions early on."], ["Ownership and impact", "Your work is visible, and you can shape the product and the culture of the company."], ["Upside potential", "Equity, rapid promotion and entrepreneurial skills can pay off if the company grows."]], "ex": "Many well-known tech companies began as tiny teams where every person carried real responsibility."}, "b": {"title": "The case for a corporate job", "args": [["Stability and income", "A regular salary and benefits help with loans, family and long-term planning."], ["Structured training", "Established firms offer mentoring, processes and a recognised name on a CV."], ["Lower personal risk", "If one project fails, the organisation absorbs the impact rather than you alone."]], "ex": "Large firms often run structured graduate programmes that rotate new hires across departments."}}, "zones": [["Startup all the way.", "Learning and upside beat comfort. What is your safety net?"], ["Leaning startup.", "You want the challenge with some cushion. How much cushion is enough?"], ["Depends on the company.", "The employer matters more than the label. What would you check first?"], ["Leaning corporate.", "Stability first, with room to grow. When would you take a bigger risk?"], ["Corporate all the way.", "Security and structure win. What would tempt you to leave?"]], "nuance": [["It depends on the company", "Some startups are well run and some corporates stagnate; the employer matters more than the label."], ["It depends on life stage", "Financial responsibilities and personal goals change the right level of risk."], ["The choice is not permanent", "Many people move between both worlds as their goals evolve."]], "qs": ["What is the worst that could happen at a startup, and could you recover from it?", "In a first job, which matters most to you: learning, income or security?", "Would your family's expectations change your decision? Should they?", "Where do you want to be in ten years, and which path gets you there?"], "vote": ["Startup", "Corporate", "Depends on the company"]};
+  var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s,r){ return (r||document).querySelector(s); };
+  var scenes = Array.prototype.slice.call(document.querySelectorAll('.scene'));
+  var rail = $('#rail');
+  scenes.forEach(function(sc){
+    var b = document.createElement('button'); b.type='button'; b.setAttribute('aria-label', sc.dataset.label);
+    b.innerHTML = '<span></span><em>'+sc.dataset.label+'</em>';
+    b.addEventListener('click', function(){ sc.scrollIntoView({behavior: RM?'auto':'smooth'}); });
+    rail.appendChild(b);
+  });
+  var rb = rail.querySelectorAll('button'), cur = 0;
+  function setActive(i){ cur=i; rb.forEach(function(b,k){ if(k===i) b.setAttribute('aria-current','true'); else b.removeAttribute('aria-current'); });
+    rail.classList.toggle('on-light', scenes[i].dataset.lum==='light'); }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) setActive(scenes.indexOf(e.target)); }); },{threshold:0.55});
+  scenes.forEach(function(s){ io.observe(s); }); setActive(0);
+  function go(d){ var n=Math.max(0,Math.min(scenes.length-1,cur+d)); scenes[n].scrollIntoView({behavior:RM?'auto':'smooth'}); }
+  document.addEventListener('keydown', function(e){
+    var tag = e.target && e.target.tagName; if(tag==='INPUT') return;
+    if(e.key==='ArrowDown'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowUp'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key===' ' && tag!=='BUTTON'){ e.preventDefault(); go(e.shiftKey?-1:1); }
+  });
+  $('#go').addEventListener('click', function(){ go(1); });
+  $('#top').addEventListener('click', function(){ scenes[0].scrollIntoView({behavior:RM?'auto':'smooth'}); });
+
+  /* hook */
+  var hook=$('#hook');
+  if(RM || !D.typed){ hook.textContent = D.hook; }
+  else { var i=0; hook.innerHTML='<span class="caret"></span>';
+    setTimeout(function tick(){ i++; hook.innerHTML = D.hook.slice(0,i).replace(/&/g,'&amp;').replace(/</g,'&lt;')+'<span class="caret"></span>'; if(i<D.hook.length) setTimeout(tick,34+Math.random()*40); },700); }
+
+  /* hero canvas effects */
+  var cv=$('#fx');
+  if(cv){
+    var ctx=cv.getContext('2d'), W=0,H=0,dpr=1,mx=-999,my=-999,vis=true,raf=0,hero=$('#s-start'),parts=[],blips=[],lastBlip=0;
+    function size(){ dpr=Math.min(window.devicePixelRatio||1,2); var r=cv.parentElement.getBoundingClientRect(); W=r.width; H=r.height; cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+      if(D.hero==='bubbles' && !parts.length){ for(var k=0;k<26;k++) parts.push({x:Math.random()*W,y:Math.random()*H,r:22+Math.random()*80,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,c:D.fx[k%D.fx.length],o:k%3===0}); }
+      if(RM) draw(0); }
+    function draw(t){
+      ctx.clearRect(0,0,W,H);
+      if(D.hero==='bubbles'){
+        parts.forEach(function(p){
+          var dx=p.x-mx,dy=p.y-my,d=Math.sqrt(dx*dx+dy*dy);
+          if(!RM){ if(d<p.r+200 && d>1){ var f=(p.r+200-d)/(p.r+200); p.vx+=dx/d*f*.25; p.vy+=dy/d*f*.25; }
+            p.vx*=.985; p.vy*=.985; p.x+=p.vx+.06*Math.sin(t/2000+p.r); p.y+=p.vy+.05*Math.cos(t/2300+p.r);
+            if(p.x<-p.r) p.x=W+p.r; if(p.x>W+p.r) p.x=-p.r; if(p.y<-p.r) p.y=H+p.r; if(p.y>H+p.r) p.y=-p.r; }
+          ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,6.2832);
+          if(p.o){ ctx.strokeStyle=p.c; ctx.lineWidth=3; ctx.stroke(); } else { ctx.fillStyle=p.c; ctx.fill(); }
+        });
+      } else if(D.hero==='grid'){
+        var g=48, R=230;
+        for(var y=g/2;y<H;y+=g){ for(var x=g/2;x<W;x+=g){
+          var dx=x-mx,dy=y-my,d=Math.sqrt(dx*dx+dy*dy),k=d<R?1-d/R:0,L=5+8*k;
+          ctx.strokeStyle = k>0.05 ? 'rgba(61,224,255,'+(0.3+0.7*k)+')' : 'rgba(147,165,204,0.22)'; ctx.lineWidth=1.5;
+          ctx.beginPath(); ctx.moveTo(x-L,y); ctx.lineTo(x+L,y); ctx.moveTo(x,y-L); ctx.lineTo(x,y+L); ctx.stroke(); } }
+        if(!RM){
+          var sy=((t/14)%(H+240))-120, gr=ctx.createLinearGradient(0,sy-60,0,sy+60); gr.addColorStop(0,'rgba(61,224,255,0)'); gr.addColorStop(.5,'rgba(61,224,255,.22)'); gr.addColorStop(1,'rgba(61,224,255,0)');
+          ctx.fillStyle=gr; ctx.fillRect(0,sy-60,W,120);
+          if(t-lastBlip>500){ lastBlip=t; blips.push({x:Math.round(Math.random()*W/g)*g+g/2,y:Math.round(Math.random()*H/g)*g+g/2,t:t}); if(blips.length>8) blips.shift(); }
+          blips.forEach(function(b){ var a=(t-b.t)/1800; if(a>1) return; ctx.beginPath(); ctx.arc(b.x,b.y,8+a*50,0,6.2832); ctx.strokeStyle='rgba(255,79,163,'+(1-a)+')'; ctx.lineWidth=2; ctx.stroke(); });
+        }
+      }
+    }
+    function loop(t){ if(!vis){ raf=0; return; } draw(t); raf=requestAnimationFrame(loop); }
+    hero.addEventListener('pointermove', function(e){ var r=cv.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top; if(RM) draw(0); });
+    hero.addEventListener('pointerleave', function(){ mx=-999; my=-999; if(RM) draw(0); });
+    window.addEventListener('resize', size); size();
+    if(!RM){ new IntersectionObserver(function(es){ vis=es[0].isIntersecting; if(vis && !raf) raf=requestAnimationFrame(loop); },{threshold:0.05}).observe(hero); raf=requestAnimationFrame(loop); }
+  }
+  /* press: reveal headline word by word */
+  if(D.hero==='press' && !RM){ var h=$('#s-start h1'); var words=h.textContent.split(' '); h.innerHTML=words.map(function(w,k){ return '<span class="pw" style="animation-delay:'+(0.25+k*0.11)+'s">'+w+'</span>'; }).join(' '); }
+
+  /* terms */
+  var dials=$('#dials'), tp=$('#termPanel');
+  function showTerm(i){ dials.querySelectorAll('.dial').forEach(function(b,k){ b.setAttribute('aria-pressed',k===i?'true':'false'); });
+    tp.classList.remove('swap'); void tp.offsetWidth; if(!RM) tp.classList.add('swap');
+    tp.innerHTML='<h3>'+D.terms[i].n+'</h3><p class="def">'+D.terms[i].d+'</p><p class="ask"><b>Ask the group:</b> '+D.terms[i].a+'</p>'; }
+  D.terms.forEach(function(t,i){ var b=document.createElement('button'); b.type='button'; b.className='dial'; b.setAttribute('aria-pressed','false');
+    b.innerHTML='<svg viewBox="0 0 40 40" aria-hidden="true">'+t.g+'</svg><span>'+t.n+'</span>'; b.addEventListener('click',function(){ showTerm(i); }); dials.appendChild(b); });
+  showTerm(0);
+
+  /* views */
+  var picked={}, side='a', ap=$('#argPanel'), tab={a:$('#tab-a'),b:$('#tab-b')};
+  var tick='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  function tally(){ var n=Object.keys(picked).filter(function(k){return picked[k];}).length;
+    $('#tally').innerHTML = n ? 'You are convinced by <strong>'+n+'</strong> of 6 arguments.' : 'Tap the box beside any argument that convinces you.'; }
+  function renderSide(anim){ var v=D.views[side];
+    var h='<h3 style="font-size:clamp(22px,2.4vw,34px)">'+v.title+'</h3><ul class="args">';
+    v.args.forEach(function(a,i){ var key=side+i;
+      h+='<li><button type="button" class="pick" data-k="'+key+'" aria-pressed="'+(picked[key]?'true':'false')+'" aria-label="This convinces me: '+a[0]+'">'+tick+'</button><div class="t"><h3>'+a[0]+'</h3><p>'+a[1]+'</p></div></li>'; });
+    h+='</ul><div class="real"><b>In practice</b><p class="soft">'+v.ex+'</p></div>';
+    ap.innerHTML=h; ap.classList.remove('swap'); void ap.offsetWidth; if(anim && !RM) ap.classList.add('swap'); }
+  function setSide(s){ side=s; tab.a.setAttribute('aria-selected',s==='a'?'true':'false'); tab.b.setAttribute('aria-selected',s==='b'?'true':'false'); renderSide(true); }
+  tab.a.addEventListener('click',function(){ setSide('a'); }); tab.b.addEventListener('click',function(){ setSide('b'); });
+  ap.addEventListener('click',function(e){ var b=e.target.closest('.pick'); if(!b) return; var k=b.dataset.k; picked[k]=!picked[k]; b.setAttribute('aria-pressed',picked[k]?'true':'false'); tally(); });
+  renderSide(false); tally();
+
+  /* stand */
+  var range=$('#range'), zone=$('#zone'), zonep=$('#zonep');
+  function upd(){ var v=+range.value, idx=Math.min(4,Math.floor(v/20.0001)); zone.textContent=D.zones[idx][0]; zonep.textContent=D.zones[idx][1]; }
+  range.addEventListener('input',upd); upd();
+  $('#nuance').innerHTML=D.nuance.map(function(n){ return '<div><h3>'+n[0]+'</h3><p>'+n[1]+'</p></div>'; }).join('');
+
+  /* talk */
+  var qi=0, qbar=$('#qbar'), qbig=$('#qbig');
+  D.qs.forEach(function(q,i){ var b=document.createElement('button'); b.type='button'; b.className='qn'; b.textContent=i+1; b.setAttribute('aria-label','Question '+(i+1)); b.addEventListener('click',function(){ showQ(i); }); qbar.appendChild(b); });
+  function showQ(i){ qi=i; qbar.querySelectorAll('.qn').forEach(function(b,k){ b.setAttribute('aria-pressed',k===i?'true':'false'); });
+    qbig.classList.remove('swap'); void qbig.offsetWidth; if(!RM) qbig.classList.add('swap'); qbig.textContent=D.qs[i]; resetTimer(); }
+  $('#qnext').addEventListener('click',function(){ showQ((qi+1)%D.qs.length); });
+  $('#qrand').addEventListener('click',function(){ var n; do{ n=Math.floor(Math.random()*D.qs.length); }while(n===qi); showQ(n); });
+  var LEN=120,left=LEN,tm=null,timerEl=$('#timer'),tgo=$('#tgo');
+  function fmt(s){ return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2); }
+  function resetTimer(){ clearInterval(tm); tm=null; left=LEN; timerEl.textContent=fmt(left); timerEl.classList.remove('done'); tgo.textContent='Start timer'; }
+  tgo.addEventListener('click',function(){ if(tm){ clearInterval(tm); tm=null; tgo.textContent='Resume timer'; return; } if(left<=0) resetTimer(); tgo.textContent='Pause timer';
+    tm=setInterval(function(){ left--; timerEl.textContent=fmt(left); if(left<=0){ clearInterval(tm); tm=null; timerEl.classList.add('done'); tgo.textContent='Start timer'; } },1000); });
+  $('#treset').addEventListener('click',resetTimer); showQ(0);
+
+  /* vote */
+  var counts=[0,0,0], hist=[], votes=$('#votes'), bars=$('#bars');
+  D.vote.forEach(function(o,i){ var b=document.createElement('button'); b.type='button'; b.className='vote'; b.innerHTML='<span>'+o+'</span><output id="c'+i+'">0</output>'; b.setAttribute('aria-label','Add a hand for '+o);
+    b.addEventListener('click',function(){ counts[i]++; hist.push(i); b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); renderVotes(); }); votes.appendChild(b);
+    var r=document.createElement('div'); r.className='bar'; r.innerHTML='<label>'+o+'</label><div class="track"><div class="fill" id="f'+i+'"></div></div><small id="p'+i+'">0%</small>'; bars.appendChild(r); });
+  function renderVotes(){ var tot=counts.reduce(function(a,b){return a+b;},0);
+    counts.forEach(function(c,i){ $('#c'+i).textContent=c; var p=tot?Math.round(c/tot*100):0; $('#f'+i).style.width=p+'%'; $('#p'+i).textContent=p+'%'; });
+    $('#vtotal').textContent = tot ? tot+(tot===1?' hand counted':' hands counted') : 'No hands counted yet'; }
+  $('#undo').addEventListener('click',function(){ var i=hist.pop(); if(i!==undefined){ counts[i]--; renderVotes(); } });
+  $('#clear').addEventListener('click',function(){ counts=[0,0,0]; hist=[]; renderVotes(); });
+  renderVotes();
+})();
+
+</script>
+</body>
+</html>
